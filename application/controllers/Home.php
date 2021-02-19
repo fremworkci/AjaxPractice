@@ -34,7 +34,7 @@ class Home extends CI_Controller
 
 	function delete()
 	{
-		//delete
+		//delete2
 	}
 }
 ?>
