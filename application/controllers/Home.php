@@ -34,7 +34,24 @@ class Home extends CI_Controller
 
 	function delete()
 	{
-		//delete2
+		$id=$this->input->post("id");
+		$qry=$this->Model1->delete_model($id);
+	}
+
+	function insert()
+	{
+		$name=$this->input->post("name");
+		$email=$this->input->post("email");
+		$password=$this->input->post("password");
+		$gender=$this->input->post("gender");
+		$this->load->library('upload');
+		$config['upload_path']= './img/';
+		$config['allowed_types'] = 'gif|jpg|png';
+		$this->upload->initialize($config);
+		$this->upload->do_upload('pic');
+		$file=$this->upload->data();
+		$pic=$file["file_name"];
+		$qry=$this->Model1->insert_model($name,$email,$password,$gender,$pic);
 	}
 }
 ?>

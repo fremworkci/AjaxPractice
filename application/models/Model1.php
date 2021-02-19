@@ -27,5 +27,16 @@ class Model1 extends CI_Model
 		$this->db->where("id",$id);
 		return $this->db->update("login",array("name"=>$name,"email"=>$email));
 	}
+
+	function delete_model($id)
+	{
+		$this->db->where("id",$id);
+		return $this->db->delete("login");
+	}
+
+	function insert_model($name,$email,$password,$gender,$pic)
+	{
+		return $this->db->insert("login",array("name"=>$name,"email"=>$email,"password"=>$password,"gender"=>$gender,"pic"=>$pic));
+	}
 }
 ?>
