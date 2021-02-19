@@ -31,5 +31,10 @@ class Home extends CI_Controller
 		$email=$this->input->post("email");
 		$qry=$this->Model1->update_model($id,$name,$email);
 	}
+
+	function delete()
+	{
+		//delete
+	}
 }
 ?>
